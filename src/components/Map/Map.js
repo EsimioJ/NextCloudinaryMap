@@ -22,7 +22,7 @@ const Map = () => {
     const map = new mapboxgl.Map({
       container: "map",
       cooperativeGestures: true,
-      zoom: 13.5,
+      zoom: 15,
       pitch: 80,
       bearing: 240,
       center: [10.8751, 44.1422],
