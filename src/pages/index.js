@@ -10,8 +10,8 @@ import styles from "@styles/Home.module.scss";
 import Map from "@components/Map";
 
 export default function Home({ images, nextCursor }) {
-  console.log("images", images);
-  console.log("nextCursor", nextCursor);
+  // console.log("images", images);
+  // console.log("nextCursor", nextCursor);
 
   return (
     <Layout>
@@ -38,7 +38,7 @@ export default function Home({ images, nextCursor }) {
                       width={image.width}
                       height={image.height}
                       src={image.image}
-                      alt=""
+                      alt={image.title}
                     />
                   </div>
                   <h3 className={styles.imageTitle}>{image.title}</h3>
@@ -65,7 +65,6 @@ export async function getStaticProps() {
       },
     }
   ).then((r) => r.json());
-  // console.log("results", results);
   const { resources, next_cursor: nextCursor } = results;
 
   const images = resources.map((resource) => {
